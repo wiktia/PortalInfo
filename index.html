@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTWInfo - Bądź na czasie</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__top-bar container-padding">
+      <div class="header__logo">NTWKInfo</div>
+      <nav class="header__nav">
+        <a href="#" class="active">Strona główna</a>
+        <a href="#">Wiadomości</a>
+        <a href="#">Pogoda</a>
+        <a href="#">Ekonomia</a>
+      </nav>
+      <div class="header__meta">
+        <span>28 stycznia, poniedziałek</span>
+        <span>Europejski Dzień Ochrony Danych Osobowych</span>
+      </div>
+      <button class="header__cta-button">Zaloguj się</button>
+    </div>
+  </header>
+
+  <main class="main-content container-padding">
+
+ <main class="main-content container-padding">
+
+        <section class="main-column">
+            
+            <!-- Carousel: daily information / news -->
+<section class="main-article-carousel">
+    <ul class="carousel">
+        <li class="carousel-slide active">
+            <article class="main-article">
+                <h1 class="main-article__title">Bądź na czasie — Wydarzenie 1</h1>
+                <div class="main-article__image-container">
+                    <div class="image-placeholder">Obrazek 1</div>
+                </div>
+            </article>
+        </li>
+
+        <li class="carousel-slide">
+            <article class="main-article">
+                <h1 class="main-article__title">Bądź na czasie — Wydarzenie 2</h1>
+                <div class="main-article__image-container">
+                    <div class="image-placeholder">Obrazek 2</div>
+                </div>
+            </article>
+        </li>
+
+        <li class="carousel-slide">
+            <article class="main-article">
+                <h1 class="main-article__title">Bądź na czasie — Wydarzenie 3</h1>
+                <div class="main-article__image-container">
+                    <div class="image-placeholder">Obrazek 3</div>
+                </div>
+            </article>
+        </li>
+    </ul>
+
+    <button class="carousel-button prev">‹</button>
+    <button class="carousel-button next">›</button>
+</section>
+
+
+            <hr class="separator mobile-only">
+
+
+    <!-- 🌤 Pogoda + Kursy -->
+    <section class="info-row">
+
+      <!-- POJEDYNCZE OKNO POGODY -->
+      <section class="weather-box">
+        <div>
+          <div class="weather-box__city">Kraków</div>
+          <div class="weather-box__temp">24°C</div>
+          <div class="weather-box__details">
+            <span>Zachmurzenie</span>
+            <span>Od 18°C do 25°C</span>
+          </div>
+        </div>
+
+        <div class="weather-box__icon">🌧️</div>
+      </section>
+
+      <!-- Kursy walut -->
+      <section class="exchange-rates">
+        <h2 class="exchange-rates__title">Aktualne kursy walut:</h2>
+        <div class="exchange-rates__table">
+          <div class="exchange-rates__header">
+            <span class="cell">Waluta</span>
+            <span class="cell">Kupno</span>
+            <span class="cell">Sprzedaż</span>
+          </div>
+          <div class="rate-list">
+            <div class="rate-item">
+              <span class="cell">USD</span>
+              <span class="cell">4.10</span>
+              <span class="cell">4.25</span>
+            </div>
+            <div class="rate-item">
+              <span class="cell">EUR</span>
+              <span class="cell">4.45</span>
+              <span class="cell">4.60</span>
+            </div>
+            <div class="rate-item">
+              <span class="cell">GBP</span>
+              <span class="cell">5.20</span>
+              <span class="cell">5.35</span>
+            </div>
+            <div class="rate-item">
+              <span class="cell">CHF</span>
+              <span class="cell">4.65</span>
+              <span class="cell">4.80</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer class="footer container-padding">
+    <span>NTWKInfo 2025 © Wszystkie prawa zastrzeżone</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
