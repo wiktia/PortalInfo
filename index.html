@@ -28,64 +28,87 @@
 
   <main class="main-content container-padding">
 
- <main class="main-content container-padding">
+    <!-- 📰 Karuzela wiadomości -->
+    <section class="main-article-carousel">
 
-        <section class="main-column">
-            
-            <!-- Carousel: daily information / news -->
-<section class="main-article-carousel">
-    <ul class="carousel">
-        <li class="carousel-slide active">
-            <article class="main-article">
-                <h1 class="main-article__title">Bądź na czasie — Wydarzenie 1</h1>
-                <div class="main-article__image-container">
-                    <div class="image-placeholder">Obrazek 1</div>
-                </div>
-            </article>
-        </li>
+      <div class="carousel-container">
+        <!-- Slajd 1 -->
+        <article class="carousel-slide active">
+          <div class="main-article__header">
+            <span>28 stycznia, 07:31, poniedziałek</span>
+          </div>
+          <h1 class="main-article__title">43-latka miała stłuczkę — Policja wydała komunikat</h1>
+          <div class="main-article__image-container">
+            <div class="image-placeholder">Zdjęcie wiadomości 1</div>
+            <div class="main-article__caption">
+              Kobieta miała stłuczkę i trafiła na 27 lat do sądu rodzinnego. Policja wydała komunikat.
+            </div>
+          </div>
+        </article>
 
-        <li class="carousel-slide">
-            <article class="main-article">
-                <h1 class="main-article__title">Bądź na czasie — Wydarzenie 2</h1>
-                <div class="main-article__image-container">
-                    <div class="image-placeholder">Obrazek 2</div>
-                </div>
-            </article>
-        </li>
+        <!-- Slajd 2 -->
+        <article class="carousel-slide">
+          <div class="main-article__header">
+            <span>28 stycznia, 08:15, poniedziałek</span>
+          </div>
+          <h1 class="main-article__title">Nowy system edukacji w Polsce – rewolucja w szkołach</h1>
+          <div class="main-article__image-container">
+            <div class="image-placeholder">Zdjęcie wiadomości 2</div>
+            <div class="main-article__caption">
+              Ministerstwo zapowiada zmiany w sposobie oceniania i większy nacisk na praktyczne umiejętności.
+            </div>
+          </div>
+        </article>
 
-        <li class="carousel-slide">
-            <article class="main-article">
-                <h1 class="main-article__title">Bądź na czasie — Wydarzenie 3</h1>
-                <div class="main-article__image-container">
-                    <div class="image-placeholder">Obrazek 3</div>
-                </div>
-            </article>
-        </li>
-    </ul>
+        <!-- Slajd 3 -->
+        <article class="carousel-slide">
+          <div class="main-article__header">
+            <span>28 stycznia, 09:00, poniedziałek</span>
+          </div>
+          <h1 class="main-article__title">Zima wraca do Polski – IMGW ostrzega przed oblodzeniem</h1>
+          <div class="main-article__image-container">
+            <div class="image-placeholder">Zdjęcie wiadomości 3</div>
+            <div class="main-article__caption">
+              Na południu kraju prognozowane są intensywne opady śniegu i śliskie drogi.
+            </div>
+          </div>
+        </article>
 
-    <button class="carousel-button prev">‹</button>
-    <button class="carousel-button next">›</button>
-</section>
+        <!-- Przyciski karuzeli -->
+        <button class="carousel-button prev">‹</button>
+        <button class="carousel-button next">›</button>
+      </div>
 
+    </section>
 
-            <hr class="separator mobile-only">
-
-
-    <!-- 🌤 Pogoda + Kursy -->
+    <!-- 🌤 Pogoda + 💱 Kursy obok siebie -->
     <section class="info-row">
 
-      <!-- POJEDYNCZE OKNO POGODY -->
-      <section class="weather-box">
-        <div>
-          <div class="weather-box__city">Kraków</div>
-          <div class="weather-box__temp">24°C</div>
-          <div class="weather-box__details">
-            <span>Zachmurzenie</span>
-            <span>Od 18°C do 25°C</span>
+      <!-- Pogoda -->
+      <section class="weather-section">
+        <h2 class="weather-section__title">Pogoda w: Kraków</h2>
+        <div class="weather-forecast">
+          <div class="day-forecast">
+            <span class="day-name">Poniedziałek</span>
+            <span class="temperature">10–17°C</span>
+            <div class="icon-placeholder">☁️</div>
+          </div>
+          <div class="day-forecast">
+            <span class="day-name">Wtorek</span>
+            <span class="temperature">20–30°C</span>
+            <div class="icon-placeholder">☀️</div>
+          </div>
+          <div class="day-forecast">
+            <span class="day-name">Środa</span>
+            <span class="temperature">18–22°C</span>
+            <div class="icon-placeholder">💧</div>
+          </div>
+          <div class="day-forecast">
+            <span class="day-name">Czwartek</span>
+            <span class="temperature">15–20°C</span>
+            <div class="icon-placeholder">🌤</div>
           </div>
         </div>
-
-        <div class="weather-box__icon">🌧️</div>
       </section>
 
       <!-- Kursy walut -->
