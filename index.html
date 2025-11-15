@@ -82,33 +82,21 @@
     </section>
 
     <!-- 🌤 Pogoda + 💱 Kursy obok siebie -->
+    <!-- 🌤 Pogoda + Kursy -->
     <section class="info-row">
 
-      <!-- Pogoda -->
-      <section class="weather-section">
-        <h2 class="weather-section__title">Pogoda w: Kraków</h2>
-        <div class="weather-forecast">
-          <div class="day-forecast">
-            <span class="day-name">Poniedziałek</span>
-            <span class="temperature">10–17°C</span>
-            <div class="icon-placeholder">☁️</div>
-          </div>
-          <div class="day-forecast">
-            <span class="day-name">Wtorek</span>
-            <span class="temperature">20–30°C</span>
-            <div class="icon-placeholder">☀️</div>
-          </div>
-          <div class="day-forecast">
-            <span class="day-name">Środa</span>
-            <span class="temperature">18–22°C</span>
-            <div class="icon-placeholder">💧</div>
-          </div>
-          <div class="day-forecast">
-            <span class="day-name">Czwartek</span>
-            <span class="temperature">15–20°C</span>
-            <div class="icon-placeholder">🌤</div>
+      <!-- POJEDYNCZE OKNO POGODY -->
+      <section class="weather-box">
+        <div>
+          <div class="weather-box__city">Kraków</div>
+          <div class="weather-box__temp">24°C</div>
+          <div class="weather-box__details">
+            <span>Zachmurzenie</span>
+            <span>Od 18°C do 25°C</span>
           </div>
         </div>
+
+        <div class="weather-box__icon">🌧️</div>
       </section>
 
       <!-- Kursy walut -->
@@ -144,7 +132,6 @@
           </div>
         </div>
       </section>
-
     </section>
   </main>
 
