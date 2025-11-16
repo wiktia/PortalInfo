@@ -42,29 +42,50 @@ h1, h2, h3 {
 }
 
 /* --- 2. NAGŁÓWEK --- */
+
+/* --- 2. NAGŁÓWEK --- */
 .header {
-    border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  z-index: 99;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* wycentrowanie nagłówka względem strony */
 }
 
 .header__top-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* wyśrodkowanie elementów w poziomie */
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
     height: 120px;
     font-size: 14px;
+    gap: 30px; /* odstęp między elementami */
     flex-wrap: wrap;
+    text-align: center; /* wycentrowanie tekstu w elementach */
+}
+.header__logo {
+  font-size: 40px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  margin: 10px 0;
+  margin-right: auto; /* umieść logo z lewej strony */
+  align-self: center;
+  text-align: left;
 }
 
-.header__logo {
-    font-size: 40px;
-    font-weight: 500;
-    font-family: var(--font-body);
+.header__nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center; /* linki na środku */
 }
 
 .header__nav a {
-    margin-right: 15px;
+    margin: 0;
     padding: 5px 0;
     color: var(--color-text-secondary);
     transition: color 0.2s;
@@ -73,6 +94,7 @@ h1, h2, h3 {
 .header__nav a.active {
     color: var(--color-black);
     border-bottom: 2px solid var(--color-black);
+    padding-bottom: 2px;
 }
 
 .header__meta {
@@ -80,24 +102,26 @@ h1, h2, h3 {
     flex-direction: column;
     color: var(--color-text-secondary);
     line-height: 1.2;
-    padding-right: 20px;
+    padding-right: 0;
     font-size: 15px;
+    align-items: center; /* wyśrodkowanie meta */
 }
 
 .header__cta-button {
     background-color: var(--color-primary);
     color: var(--color-white);
     border: none;
-    padding: 16px 30px;
+    padding: 12px 20px; /* zmniejszone, aby lepiej pasowało do wyśrodkowanego układu */
     cursor: pointer;
     font-family: var(--font-body);
-    font-size: 25px;
+    font-size: 18px;
     border-radius: 8px;
+    
 }
 
 /* --- 3. GŁÓWNA ZAWARTOŚĆ --- */
 .main-content {
-    max-width: 100%;
+    max-width: 95%;
     margin: 0 auto;
     padding: 30px 20px;
     display: flex;
@@ -270,162 +294,255 @@ h1, h2, h3 {
 }
 
 /* --- 9. RESPONSYWNOŚĆ --- */
-/* --- POPRAWIONA RESPONSYWNOŚĆ NA TELEFONACH --- */
+
+
+/* 📱 TELEFONY */
 @media (max-width: 799px) {
+  /* HEADER */
+  .header__top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 20px;
+    height: auto;
+    text-align: left;
+  }
 
-    /* HEADER */
-    .header__top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        gap: 10px;
-        padding: 15px 0;
-    }
+  .header__logo {
+    font-size: 28px;
+    margin: 0;
+    width: 100%;
+  }
 
-    .header__logo {
-        font-size: 32px;
-        margin-bottom: 10px;
-    }
+  .header__nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 100%;
+  }
 
-    .header__nav {
-        width: 100%;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
+  .header__nav a {
+    font-size: 11px;
+    padding: 3px 0;
+    flex: 1 1 auto;
+  }
 
-    .header__meta {
-        padding-right: 0;
-        font-size: 13px;
-    }
+  .header__meta {
+    font-size: 13px;
+    align-items: flex-start;
+    width: 100%;
+  }
 
-    .header__cta-button {
-        width: 100%;
-        text-align: center;
-        font-size: 20px;
-        padding: 12px 0;
-    }
+  .header__cta-button {
+    position: static;
+    align-self: flex-start;
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-top: 10px;
+  }
 
-    /* MAIN GRID */
-    .content-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
+  /* MAIN GRID */
+  .content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 
-    /* RIGHT COLUMN — UKŁAD POD SOBĄ */
-    .right-column {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-    }
+  /* RIGHT COLUMN — pogoda i kursy obok siebie */
+  .right-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+  }
 
-    /* OBRAZEK */
-    .image-placeholder {
-        height: 220px;
-        max-height: none;
-    }
+  /* KARUZELA NAD PRAWĄ KOLUMNĄ */
+  .main-article-carousel {
+    order: -1;
+  }
 
-    /* KARUZELA */
-    .carousel-container {
-        margin-bottom: 20px;
-    }
+  /* OBRAZEK */
+  .image-placeholder {
+    height: 220px;
+    max-height: none;
+  }
 
-    .carousel-button {
-        font-size: 18px;
-        width: 32px;
-        height: 32px;
-    }
+  /* KARUZELA */
+  
 
-    /* WEATHER + EXCHANGE BOXES */
-    .weather-box,
-    .exchange-rates {
-        width: 100%;
-        padding: 15px;
-    }
+  .carousel-button {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+  }
 
-    .weather-box__temp {
-        font-size: 28px;
-    }
+  /* WEATHER BOX */
+  .weather-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 25px;
+    max-height: 250px;
+  }
 
-    .exchange-rates__title {
-        font-size: 18px;
-    }
+  .weather-box__icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
 
-    .rate-item .cell {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
+  .weather-box__temp {
+    font-size: 28px;
+  }
 
-    /* OGÓLNE ZMNIEJSZENIE PADDINGÓW */
-    .main-content {
-        padding: 20px 15px;
-        gap: 30px;
-    }
+  /* EXCHANGE RATES */
+  .exchange-rates {
+    max-width: 100%;
+    overflow-x: hidden;
+    /*padding: 25px;*/
+    width: 100%;
+  }
+
+  .exchange-rates__table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .exchange-rates__header {
+    font-size: 15px;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+
+
+  .exchange-rates__title {
+    font-size: 15px;
+  }
+
+  .rate-item .cell {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  /* OGÓLNE ZMNIEJSZENIE PADDINGÓW */
+  .main-content {
+    padding: 10px 10px;
+    gap: 20px;
+  }
 }
 
-
+/* 💻 TABLETY */
 @media (min-width: 800px) and (max-width: 1279px) {
-    .main-content {
-        padding: 40px 30px;
-    }
+  .header__top-bar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 30px;
+    height: auto;
+  }
 
-    .main-article__title {
-        font-size: 32px;
-    }
+  .header__logo {
+    font-size: 32px;
+    flex: 1 1 100%;
+  }
 
-    .weather-box {
-        padding: 25px 30px;
-    }
+  .header__nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 16px;
+    flex: 1 1 100%;
+  }
 
-    .carousel-button {
-        font-size: 24px;
-        padding: 10px;
-    }
+  .header__nav a {
+    font-size: 15px;
+    padding: 6px 0;
+    min-width: 90px;
+  }
+
+  .header__meta {
+    font-size: 14px;
+    flex: 1 1 100%;
+  }
+
+  .header__cta-button {
+    position: static;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+
+  .main-content {
+    padding: 40px 30px;
+  }
+
+  .main-article__title {
+    font-size: 32px;
+  }
+
+  .weather-box {
+    padding: 25px 30px;
+  }
+
+  .carousel-button {
+    font-size: 24px;
+    padding: 10px;
+  }
 }
 
+/* 🖥 LAPTOPY I WIĘKSZE */
 @media (min-width: 1024px) {
-    body {
-        padding: 0;
-        margin: 0;
-    }
-    
+  html, body {
+    height: 100%;
+  }
 
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .main-content {
-        width: 100%;
-        max-width: none;
-        height: 100%;
-    
-        padding: 50px 60px;
-        gap: 60px;
-    }
+  .main-content {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    padding: 50px 60px;
+    gap: 60px;
+  }
 
-    .main-article__title {
-        font-size: 42px;
-    }
+  .main-article__title {
+    font-size: 42px;
+  }
 
-    .main-article__caption {
-        font-size: 16px;
-        padding: 20px 30px;
-    }
+  .main-article__caption {
+    font-size: 16px;
+    padding: 20px 30px;
+  }
 
-    .weather-box,
-    .exchange-rates {
-        font-size: 16px;
-    }
+  .weather-box,
+  .exchange-rates {
+    font-size: 16px;
+  }
 
-    .exchange-rates__title {
-        font-size: 24px;
-    }
+  .exchange-rates__title {
+    font-size: 24px;
+  }
 
-    .rate-item .cell {
-        font-size: 16px;
-        padding: 12px 20px;
-    }
+  .rate-item .cell {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .header__top-bar,
+  .footer {
+    width: 100%;
+    max-width: none;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
-
 
 
 /* --- 10. KARUZELA WIADOMOŚCI --- */
