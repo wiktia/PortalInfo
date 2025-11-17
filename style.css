@@ -333,19 +333,26 @@ h1, h2, h3 {
     width: 100%;
   }
 
+  .header__top-bar {
+    position: relative;
+  }
+
   .header__cta-button {
-    position: static;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
     align-self: flex-start;
     font-size: 14px;
     padding: 10px 15px;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   /* MAIN GRID */
   .content-grid {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 12px; /* zmniejszona przerwa między artykułem a kafelkami */
   }
 
   /* RIGHT COLUMN — pogoda i kursy obok siebie */
@@ -359,6 +366,7 @@ h1, h2, h3 {
   /* KARUZELA NAD PRAWĄ KOLUMNĄ */
   .main-article-carousel {
     order: -1;
+    margin-bottom: 0; /* usuń dodatkową przerwę pod karuzelą */
   }
 
   /* OBRAZEK */
@@ -366,6 +374,15 @@ h1, h2, h3 {
     height: 220px;
     max-height: none;
   }
+
+  .main-article__title {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 12px; /* lekko mniejszy odstęp pod tytułem */
+  }
+  .main-article__image-container {
+  margin-bottom: 1px; /* zmniejszona przerwa pod obrazkiem artykułu */
+}
 
   /* KARUZELA */
   
@@ -438,46 +455,84 @@ h1, h2, h3 {
     padding: 10px 10px;
     gap: 20px;
   }
+
+
+  /*zmienione wyrazy na znaki na telefonach*/
+  .exchange-rates__header .cell:nth-child(1)::before {
+  content: "💵";
+}
+.exchange-rates__header .cell:nth-child(2)::before {
+  content: "🛒";
+}
+.exchange-rates__header .cell:nth-child(3)::before {
+  content: "🏷️";
+}
+
+.exchange-rates__header .cell {
+  font-size: 0;
+}
+
+.exchange-rates__header .cell::before {
+  font-size: 18px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
 }
 
 /* 💻 TABLETY */
+/* 💻 TABLETY */
 @media (min-width: 800px) and (max-width: 1279px) {
   .header__top-bar {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 25px 40px;
     height: auto;
+    text-align: left;
+    background-color: var(--color-white);
   }
 
   .header__logo {
-    font-size: 32px;
-    flex: 1 1 100%;
+    font-size: 34px;
+    margin-bottom: 10px;
+    text-align: left;
   }
 
   .header__nav {
+    display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 16px;
-    flex: 1 1 100%;
+    gap: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .header__nav a {
-    font-size: 15px;
     padding: 6px 0;
     min-width: 90px;
+    font-size: 15px;
   }
 
   .header__meta {
     font-size: 14px;
-    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.3;
+    color: var(--color-text-secondary);
+    margin-top: 5px;
   }
 
   .header__cta-button {
-    position: static;
-    font-size: 16px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 18px;
     padding: 10px 20px;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   .main-content {
@@ -497,6 +552,7 @@ h1, h2, h3 {
     padding: 10px;
   }
 }
+
 
 /* 🖥 LAPTOPY I WIĘKSZE */
 @media (min-width: 1024px) {
