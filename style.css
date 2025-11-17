@@ -551,6 +551,10 @@ h1, h2, h3 {
     font-size: 24px;
     padding: 10px;
   }
+   
+  .right-column {
+    margin-top: 130px;
+  }
 }
 
 
@@ -605,6 +609,11 @@ h1, h2, h3 {
     max-width: none;
     padding-left: 60px;
     padding-right: 60px;
+  }
+
+  
+  .right-column {
+    margin-top: 70px;
   }
 }
 
