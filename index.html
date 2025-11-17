@@ -7,6 +7,51 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
+<!-- --- MODAL LOGOWANIA / REJESTRACJI --- -->
+<div id="authOverlay" class="auth-overlay hidden"></div>
+
+<div id="authModal" class="auth-modal hidden">
+
+  <!-- LOGOWANIE -->
+  <div id="loginForm" class="auth-box">
+    <button class="auth-close">×</button>
+    <h2>Zaloguj się</h2>
+    <p class="auth-switch">Nie masz konta?
+      <a href="#" id="showRegister">Zarejestruj się</a>
+    </p>
+
+    <label>Adres email</label>
+    <input type="email" placeholder="Podaj email">
+
+    <label>Hasło</label>
+    <input type="password" placeholder="Wpisz hasło">
+
+    <button class="auth-submit">Potwierdź ↗</button>
+  </div>
+
+  <!-- REJESTRACJA -->
+  <div id="registerForm" class="auth-box hidden">
+    <button class="auth-close">×</button>
+    <h2>Zarejestruj się</h2>
+    <p class="auth-switch">Masz konto?
+      <a href="#" id="showLogin">Zaloguj się</a>
+    </p>
+
+    <label>Adres email</label>
+    <input type="email" placeholder="Podaj email">
+
+    <label>Hasło</label>
+    <input type="password" placeholder="Wpisz hasło">
+
+    <label>Powtórz hasło</label>
+    <input type="password" placeholder="Powtórz hasło">
+
+    <button class="auth-submit">Potwierdź ↗</button>
+  </div>
+
+</div>
+
 <body>
   <header class="header">
     <div class="header__top-bar container-padding">
