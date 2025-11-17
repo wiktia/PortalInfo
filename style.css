@@ -535,25 +535,33 @@ h1, h2, h3 {
     margin-top: 0;
   }
 
-  .main-content {
-    padding: 40px 30px;
+ .main-content {
+    max-width: 100%;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
-  .main-article__title {
-    font-size: 32px;
+  /* --- UKŁAD: WSZYSTKO POD SOBĄ --- */
+  .content-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
   }
 
-  .weather-box {
-    padding: 25px 30px;
-  }
-
-  .carousel-button {
-    font-size: 24px;
-    padding: 10px;
-  }
-   
   .right-column {
-    margin-top: 130px;
+    width: 100%;
+    margin-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* odstęp między kafelkami */
+  }
+
+  /* --- KAFELKI --- */
+  .weather-box,
+  .exchange-rates {
+    width: 100%;
   }
 }
 
@@ -616,6 +624,8 @@ h1, h2, h3 {
     margin-top: 70px;
   }
 }
+
+
 
 
 /* --- 10. KARUZELA WIADOMOŚCI --- */
